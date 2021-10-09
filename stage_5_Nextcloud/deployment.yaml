@@ -97,7 +97,8 @@ spec:
           subPath: themes
       volumes:
       - name: nextcloud-data
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: nextcloud-data
       # Will mount configuration files as www-data (id: 33) for nextcloud
       securityContext:
         fsGroup: 33
