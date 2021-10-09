@@ -4,8 +4,7 @@ kind: Ingress
 metadata:
   name: wordpress
   labels:
-    app.kubernetes.io/name: wordpress
-    app.kubernetes.io/component: app
+    app: wordpress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
@@ -17,6 +16,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nextcloud
+            name: wordpress
             port:
-              number: 8080
+              number: 80
