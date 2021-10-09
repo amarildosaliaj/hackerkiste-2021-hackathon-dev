@@ -8,10 +8,10 @@ metadata:
     app.kubernetes.io/component: app
 spec:
   rules:
-  - host: nextcloud.kube.home
-    http:
+  - http:
       paths:
-      - path: /
+      - path: /cloud
+        pathType: Prefix
         backend:
           serviceName: nextcloud
           servicePort: 8080
