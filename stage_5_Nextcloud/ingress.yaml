@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/name: nextcloud
     app.kubernetes.io/component: app
 spec:
-  ingressClass: nginx
+  ingressClassName: nginx
   rules:
   - http:
       paths:
