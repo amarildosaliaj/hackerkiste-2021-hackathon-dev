@@ -16,4 +16,5 @@ spec:
         backend:
           service:
             name: nextcloud
-            port: 8080
+            port:
+              number: 8080
