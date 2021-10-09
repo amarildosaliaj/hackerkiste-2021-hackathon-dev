@@ -1,0 +1,22 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wordpress
+  labels:
+    app.kubernetes.io/name: wordpress
+    app.kubernetes.io/component: app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /wordpress(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: nextcloud
+            port:
+              number: 8080
